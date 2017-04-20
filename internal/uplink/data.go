@@ -7,6 +7,8 @@ import (
 	"strings"
 	"time"
 
+	"google.golang.org/grpc"
+
 	log "github.com/Sirupsen/logrus"
 
 	"github.com/brocaar/loraserver/api/as"
@@ -270,6 +272,28 @@ func publishDataUp(ctx common.Context, ns session.NodeSession, rxPacket models.R
 
 	if macPL.FPort != nil {
 		publishDataUpReq.FPort = uint32(*macPL.FPort)
+
+		switch macPL.FPort {
+		case 255: //SEND TO FOG --> redefine ctx since it is copy of real value
+
+			//Does the fog use secured connection?
+			var asDialOptions []grpc.DialOption
+			/*if c.String("as-tls-cert") != "" && c.String("as-tls-key") != "" {
+				asDialOptions = append(asDialOptions, grpc.WithTransportCredentials(
+					mustGetTransportCredentials(c.String("as-tls-cert"), c.String("as-tls-key"), c.String("as-ca-cert"), false),
+				))
+			} else {*/
+			asDialOptions = append(asDialOptions, grpc.WithInsecure())
+			//}
+
+			asConn, err := grpc.Dial("192.168.1.1:8000", asDialOptions...)
+			if err != nil {
+				log.Fatalf("application-server (FOG) dial error: %s", err)
+			}
+			asClient := as.NewApplicationServerClient(asConn)
+			ctx.Application = asClient
+			break
+		}
 	}
 
 	if len(macPL.FRMPayload) == 1 {
@@ -280,7 +304,7 @@ func publishDataUp(ctx common.Context, ns session.NodeSession, rxPacket models.R
 		publishDataUpReq.Data = dataPL.Bytes
 
 	}
-
+	//TODO: if FPort is 255 send to other application server --> Fog!
 	if _, err := ctx.Application.HandleDataUp(context.Background(), &publishDataUpReq); err != nil {
 		return fmt.Errorf("publish data up to application-server error: %s", err)
 	}
