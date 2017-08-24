@@ -2,7 +2,7 @@ loraserver:
   build: .
   command: make serve
   volumes:
-    - ./:/go/src/github.com/brocaar/loraserver
+    - ./:/go/src/github.com/joriwind/loraserver
   links:
     - postgres
     - postgres_test
