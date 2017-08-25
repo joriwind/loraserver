@@ -11,11 +11,11 @@ import (
 	context "golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"github.com/brocaar/loraserver/api/as"
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/api/nc"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/migrations"
+	"github.com/joriwind/loraserver/api/as"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/api/nc"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/migrations"
 	"github.com/brocaar/lorawan"
 	"github.com/brocaar/lorawan/band"
 )

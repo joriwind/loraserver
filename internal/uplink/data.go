@@ -11,17 +11,17 @@ import (
 
 	log "github.com/Sirupsen/logrus"
 
-	"github.com/brocaar/loraserver/api/as"
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/api/nc"
-	"github.com/brocaar/loraserver/internal/adr"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/downlink"
-	"github.com/brocaar/loraserver/internal/gateway"
-	"github.com/brocaar/loraserver/internal/maccommand"
-	"github.com/brocaar/loraserver/internal/models"
-	"github.com/brocaar/loraserver/internal/session"
 	"github.com/brocaar/lorawan"
+	"github.com/joriwind/loraserver/api/as"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/api/nc"
+	"github.com/joriwind/loraserver/internal/adr"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/downlink"
+	"github.com/joriwind/loraserver/internal/gateway"
+	"github.com/joriwind/loraserver/internal/maccommand"
+	"github.com/joriwind/loraserver/internal/models"
+	"github.com/joriwind/loraserver/internal/session"
 )
 
 func validateAndCollectDataUpRXPacket(ctx common.Context, rxPacket gw.RXPacket) error {

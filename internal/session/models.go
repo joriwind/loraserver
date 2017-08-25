@@ -1,7 +1,7 @@
 package session
 
 import (
-	"github.com/brocaar/loraserver/api/gw"
+	"github.com/joriwind/loraserver/api/gw"
 	"github.com/brocaar/lorawan"
 )
 

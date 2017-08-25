@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/maccommand"
-	"github.com/brocaar/loraserver/internal/models"
-	"github.com/brocaar/loraserver/internal/session"
-	"github.com/brocaar/loraserver/internal/test"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/maccommand"
+	"github.com/joriwind/loraserver/internal/models"
+	"github.com/joriwind/loraserver/internal/session"
+	"github.com/joriwind/loraserver/internal/test"
 	"github.com/brocaar/lorawan"
 	. "github.com/smartystreets/goconvey/convey"
 )

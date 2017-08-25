@@ -61,7 +61,7 @@ upgrading.
 
 **Changes:**
 
-* RU 864 - 869 band configuration has been updated (see [#113](https://github.com/brocaar/loraserver/issues/113))
+* RU 864 - 869 band configuration has been updated (see [#113](https://github.com/joriwind/loraserver/issues/113))
 
 ## 0.13.3
 
@@ -160,7 +160,7 @@ part of LoRa Server, but are only exposed by gRPC.
 
 ### Application-server
 
-An application-server component and [API](https://github.com/brocaar/loraserver/blob/master/api/as/as.proto)
+An application-server component and [API](https://github.com/joriwind/loraserver/blob/master/api/as/as.proto)
 was introduced to be responsible for the "inventory" part. This component is
 called by LoRa Server when a node tries to join the network, when data is
 received and to retrieve data for downlink transmissions.

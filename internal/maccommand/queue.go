@@ -10,7 +10,7 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/garyburd/redigo/redis"
 
-	"github.com/brocaar/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/common"
 	"github.com/brocaar/lorawan"
 )
 

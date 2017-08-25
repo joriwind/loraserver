@@ -11,7 +11,7 @@ import (
 	"github.com/garyburd/redigo/redis"
 	"github.com/pkg/errors"
 
-	"github.com/brocaar/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/common"
 	"github.com/brocaar/lorawan"
 )
 

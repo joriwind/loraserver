@@ -15,8 +15,8 @@ import (
 	"github.com/lib/pq"
 	"github.com/pkg/errors"
 
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/internal/common"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/internal/common"
 	"github.com/brocaar/lorawan"
 )
 

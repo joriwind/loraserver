@@ -21,18 +21,18 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/grpclog"
 
-	"github.com/brocaar/loraserver/api/as"
-	"github.com/brocaar/loraserver/api/nc"
-	"github.com/brocaar/loraserver/api/ns"
-	"github.com/brocaar/loraserver/internal/api"
-	"github.com/brocaar/loraserver/internal/backend/controller"
-	"github.com/brocaar/loraserver/internal/backend/gateway"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/migrations"
+	"github.com/joriwind/loraserver/api/as"
+	"github.com/joriwind/loraserver/api/nc"
+	"github.com/joriwind/loraserver/api/ns"
+	"github.com/joriwind/loraserver/internal/api"
+	"github.com/joriwind/loraserver/internal/backend/controller"
+	"github.com/joriwind/loraserver/internal/backend/gateway"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/migrations"
 	// TODO: merge backend/gateway into internal/gateway?
-	gw "github.com/brocaar/loraserver/internal/gateway"
-	"github.com/brocaar/loraserver/internal/migration"
-	"github.com/brocaar/loraserver/internal/uplink"
+	gw "github.com/joriwind/loraserver/internal/gateway"
+	"github.com/joriwind/loraserver/internal/migration"
+	"github.com/joriwind/loraserver/internal/uplink"
 	"github.com/brocaar/lorawan"
 	"github.com/brocaar/lorawan/band"
 )
@@ -297,7 +297,7 @@ func main() {
 	app.Name = "loraserver"
 	app.Usage = "network-server for LoRaWAN networks"
 	app.Version = version
-	app.Copyright = "See http://github.com/brocaar/loraserver for copyright information"
+	app.Copyright = "See http://github.com/joriwind/loraserver for copyright information"
 	app.Action = run
 	app.Flags = []cli.Flag{
 		cli.StringFlag{

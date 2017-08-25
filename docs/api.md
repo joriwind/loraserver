@@ -2,7 +2,7 @@
 
 The LoRa Server components are using [gRPC](http://www.grpc.io) for 
 inter-component communication. The definitions of these interfaces can be
-found in in the form of `.proto` files in the the [api](https://github.com/brocaar/loraserver/tree/master/api)
+found in in the form of `.proto` files in the the [api](https://github.com/joriwind/loraserver/tree/master/api)
 folder of the source repository:
 
 * `api/ns/ns.proto`: network-server interface

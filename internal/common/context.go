@@ -4,9 +4,9 @@ import (
 	"github.com/garyburd/redigo/redis"
 	"github.com/jmoiron/sqlx"
 
-	"github.com/brocaar/loraserver/api/as"
-	"github.com/brocaar/loraserver/api/nc"
-	"github.com/brocaar/loraserver/internal/backend"
+	"github.com/joriwind/loraserver/api/as"
+	"github.com/joriwind/loraserver/api/nc"
+	"github.com/joriwind/loraserver/internal/backend"
 	"github.com/brocaar/lorawan"
 )
 

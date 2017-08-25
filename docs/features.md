@@ -62,7 +62,7 @@ aggregated on the given intervals and are exposed through the
 Although a network-controller component is still to be implemented, it is
 already possible to receive MAC commands received by the node by
 implementing the network-controller interface as specified by the 
-[api/nc/nc.proto](https://github.com/brocaar/loraserver/tree/master/api/nc/nc.proto)
+[api/nc/nc.proto](https://github.com/joriwind/loraserver/tree/master/api/nc/nc.proto)
 file. See also the [api](api.md) documentation.
 
 ## Receive windows

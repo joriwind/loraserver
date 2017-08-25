@@ -12,11 +12,11 @@ This getting started document describes the steps needed to setup LoRa Server
 using the provided Debian package repository. Please note that LoRa Server
 is not limited to Debian / Ubuntu only! General purpose binaries
 can be downloaded from the 
-[releases](https://github.com/brocaar/loraserver/releases) page.
+[releases](https://github.com/joriwind/loraserver/releases) page.
 
 !!! info
 	An alternative way to setup all the components is by using the
-	[loraserver-setup](https://github.com/brocaar/loraserver-setup) Ansible
+	[loraserver-setup](https://github.com/joriwind/loraserver-setup) Ansible
 	playbook. It automates the steps below and can also be used in combination
 	with [Vagrant](https://www.vagrantup.com/).
 

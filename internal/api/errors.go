@@ -5,9 +5,9 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 
-	"github.com/brocaar/loraserver/internal/downlink"
-	"github.com/brocaar/loraserver/internal/gateway"
-	"github.com/brocaar/loraserver/internal/session"
+	"github.com/joriwind/loraserver/internal/downlink"
+	"github.com/joriwind/loraserver/internal/gateway"
+	"github.com/joriwind/loraserver/internal/session"
 )
 
 var errToCode = map[error]codes.Code{

@@ -10,13 +10,13 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/pkg/errors"
 
-	"github.com/brocaar/loraserver/api/as"
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/api/nc"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/maccommand"
-	"github.com/brocaar/loraserver/internal/models"
-	"github.com/brocaar/loraserver/internal/session"
+	"github.com/joriwind/loraserver/api/as"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/api/nc"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/maccommand"
+	"github.com/joriwind/loraserver/internal/models"
+	"github.com/joriwind/loraserver/internal/session"
 	"github.com/brocaar/lorawan"
 )
 

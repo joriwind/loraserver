@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/brocaar/loraserver/internal/session"
+	"github.com/joriwind/loraserver/internal/session"
 	"github.com/garyburd/redigo/redis"
 )
 

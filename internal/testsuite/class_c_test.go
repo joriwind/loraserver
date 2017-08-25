@@ -10,13 +10,13 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/api/ns"
-	"github.com/brocaar/loraserver/internal/api"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/maccommand"
-	"github.com/brocaar/loraserver/internal/session"
-	"github.com/brocaar/loraserver/internal/test"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/api/ns"
+	"github.com/joriwind/loraserver/internal/api"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/maccommand"
+	"github.com/joriwind/loraserver/internal/session"
+	"github.com/joriwind/loraserver/internal/test"
 	"github.com/brocaar/lorawan"
 )
 

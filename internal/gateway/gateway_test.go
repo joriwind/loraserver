@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/test"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/test"
 	"github.com/brocaar/lorawan"
 	"github.com/pkg/errors"
 	. "github.com/smartystreets/goconvey/convey"

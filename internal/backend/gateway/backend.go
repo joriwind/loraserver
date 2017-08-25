@@ -8,8 +8,8 @@ import (
 	"time"
 
 	log "github.com/Sirupsen/logrus"
-	"github.com/brocaar/loraserver/api/gw"
-	"github.com/brocaar/loraserver/internal/backend"
+	"github.com/joriwind/loraserver/api/gw"
+	"github.com/joriwind/loraserver/internal/backend"
 	"github.com/eclipse/paho.mqtt.golang"
 	"github.com/garyburd/redigo/redis"
 )

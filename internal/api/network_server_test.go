@@ -8,10 +8,10 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 
-	"github.com/brocaar/loraserver/api/ns"
-	"github.com/brocaar/loraserver/internal/common"
-	"github.com/brocaar/loraserver/internal/gateway"
-	"github.com/brocaar/loraserver/internal/test"
+	"github.com/joriwind/loraserver/api/ns"
+	"github.com/joriwind/loraserver/internal/common"
+	"github.com/joriwind/loraserver/internal/gateway"
+	"github.com/joriwind/loraserver/internal/test"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

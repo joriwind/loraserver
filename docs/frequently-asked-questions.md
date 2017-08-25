@@ -29,7 +29,7 @@ application-server. See also [LoRa App Server](https://docs.loraserver.io/lora-a
 
 ## I think I've found a bug
 
-Please share bugs by creating a GitHub [issue](https://github.com/brocaar/loraserver/issues).
+Please share bugs by creating a GitHub [issue](https://github.com/joriwind/loraserver/issues).
 Be as descriptive as possible e.g.:
 
 * LoRa Server and LoRa Gateway Bridge versions
@@ -43,9 +43,9 @@ Be as descriptive as possible e.g.:
 * Use the project and share your feedback :-)
 * Help improving this documentation. All documentation is written in
   [Markdown](https://daringfireball.net/projects/markdown/syntax) format
-  and can be found under the [docs](https://github.com/brocaar/loraserver/tree/master/docs)
+  and can be found under the [docs](https://github.com/joriwind/loraserver/tree/master/docs)
   folder.
 * If you would like to get involved in the (Go) development of LoRa Server please 
-  share your ideas first by creating an [issue](https://github.com/brocaar/loraserver/issues)
+  share your ideas first by creating an [issue](https://github.com/joriwind/loraserver/issues)
   so your idea can be discussed. Since LoRa Server is under active development,
   it might be that your idea is already been worked on. 
