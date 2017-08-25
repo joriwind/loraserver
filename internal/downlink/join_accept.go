@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/brocaar/lorawan"
 	"github.com/joriwind/loraserver/api/gw"
 	"github.com/joriwind/loraserver/internal/common"
 	"github.com/joriwind/loraserver/internal/models"
 	"github.com/joriwind/loraserver/internal/session"
-	"github.com/brocaar/lorawan"
 )
 
 func getJoinAcceptTXInfo(ctx common.Context, ns session.NodeSession, rxInfo gw.RXInfo) (gw.TXInfo, error) {
@@ -56,7 +56,7 @@ func SendJoinAcceptResponse(ctx common.Context, ns session.NodeSession, rxPacket
 	if err != nil {
 		return fmt.Errorf("get join-accept txinfo error: %s", err)
 	}
-
+	fmt.Printf("SendJoinAcceptResponse: %v\n", gw.TXPacket{TXInfo: txInfo, PHYPayload: phy})
 	if err = ctx.Gateway.SendTXPacket(gw.TXPacket{
 		TXInfo:     txInfo,
 		PHYPayload: phy,

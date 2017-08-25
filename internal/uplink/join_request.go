@@ -121,7 +121,7 @@ func handleCollectedJoinRequestPackets(ctx common.Context, rxPacket models.RXPac
 	if err = maccommand.FlushQueue(ctx.RedisPool, ns.DevEUI); err != nil {
 		return fmt.Errorf("flush mac-command queue error: %s", err)
 	}
-
+	fmt.Println("Sending JoinAcceptResponse")
 	if err = downlink.SendJoinAcceptResponse(ctx, ns, rxPacket, downlinkPHY); err != nil {
 		return fmt.Errorf("send join-accept response error: %s", err)
 	}
