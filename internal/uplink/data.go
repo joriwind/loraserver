@@ -286,7 +286,7 @@ func publishDataUp(ctx common.Context, ns session.NodeSession, rxPacket models.R
 			asDialOptions = append(asDialOptions, grpc.WithInsecure())
 			//}
 
-			asConn, err := grpc.Dial("192.168.1.1:8000", asDialOptions...) //TODO: when close connection?
+			asConn, err := grpc.Dial("192.168.2.1:8001", asDialOptions...) //TODO: when close connection?
 			if err != nil {
 				log.Fatalf("application-server (FOG) dial error: %s", err)
 			}
