@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 
 	log "github.com/Sirupsen/logrus"
 
@@ -23,6 +24,14 @@ import (
 	"github.com/joriwind/loraserver/internal/models"
 	"github.com/joriwind/loraserver/internal/session"
 )
+
+//hecomm configuration
+
+//ConfHecommTransportCred ...
+var ConfHecommTransportCred credentials.TransportCredentials
+
+//ConfHecommAddress ...
+var ConfHecommAddress = "192.168.2.1:8001"
 
 func validateAndCollectDataUpRXPacket(ctx common.Context, rxPacket gw.RXPacket) error {
 	ns, err := session.GetNodeSessionForPHYPayload(ctx.RedisPool, rxPacket.PHYPayload)
@@ -278,15 +287,17 @@ func publishDataUp(ctx common.Context, ns session.NodeSession, rxPacket models.R
 
 			//Does the fog use secured connection?
 			var asDialOptions []grpc.DialOption
-			if c.String("hecomm-cert") != "" && c.String("hecomm-key") != "" && c.String("hecomm-cacert") != "" {
+			if ConfHecommTransportCred != nil {
 				asDialOptions = append(asDialOptions, grpc.WithTransportCredentials(
-					mustGetTransportCredentials(c.String("hecomm-cert"), c.String("hecomm-key"), c.String("hecomm-cacert"), true),
+					ConfHecommTransportCred,
+					//mustGetTransportCredentials(ConfHecommCert, ConfHecommKey, ConfHecommCA, true),
 				))
 			} else {
 				asDialOptions = append(asDialOptions, grpc.WithInsecure())
 			}
+
 			//"192.168.2.1:8001"
-			asConn, err := grpc.Dial(c.String("hecomm-address"), asDialOptions...) //TODO: when close connection?
+			asConn, err := grpc.Dial(ConfHecommAddress, asDialOptions...) //TODO: when close connection?
 			if err != nil {
 				log.Fatalf("application-server (FOG) dial error: %s", err)
 			}

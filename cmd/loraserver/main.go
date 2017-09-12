@@ -121,6 +121,10 @@ func run(c *cli.Context) error {
 		log.WithField("count", n).Info("migrations applied")
 	}
 
+	//Configure Hecomm communication
+	uplink.ConfHecommTransportCred = mustGetTransportCredentials(c.String("hecomm-cert"), c.String("hecomm-key"), c.String("hecomm-cacert"), true)
+	uplink.ConfHecommAddress = c.String("hecomm-address")
+
 	// start the api server
 	log.WithFields(log.Fields{
 		"bind":     c.String("bind"),
