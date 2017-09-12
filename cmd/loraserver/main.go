@@ -30,11 +30,11 @@ import (
 	"github.com/joriwind/loraserver/internal/common"
 	"github.com/joriwind/loraserver/internal/migrations"
 	// TODO: merge backend/gateway into internal/gateway?
+	"github.com/brocaar/lorawan"
+	"github.com/brocaar/lorawan/band"
 	gw "github.com/joriwind/loraserver/internal/gateway"
 	"github.com/joriwind/loraserver/internal/migration"
 	"github.com/joriwind/loraserver/internal/uplink"
-	"github.com/brocaar/lorawan"
-	"github.com/brocaar/lorawan/band"
 )
 
 func init() {
@@ -442,6 +442,30 @@ func main() {
 			Name:   "gw-create-on-stats",
 			Usage:  "create non-existing gateways on receiving of stats",
 			EnvVar: "GW_CREATE_ON_STATS",
+		},
+		cli.StringFlag{
+			Name:   "hecomm-cert",
+			Usage:  "Location of certificate to use by loraserver for hecomm communication",
+			EnvVar: "HECOMMCERT",
+			Value:  "./certs/loraserver.cert.pem",
+		},
+		cli.StringFlag{
+			Name:   "hecomm-key",
+			Usage:  "Location of key corresponding to certificate used by loraserver for hecomm communication",
+			EnvVar: "HECOMMKEY",
+			Value:  "./private/loraserver.key.pem",
+		},
+		cli.StringFlag{
+			Name:   "hecomm-cacert",
+			Usage:  "Location of CA certificate for hecomm communication",
+			EnvVar: "HECOMMCACERT",
+			Value:  "./certs/ca-chain.cert.pem",
+		},
+		cli.StringFlag{
+			Name:   "hecomm-address",
+			Usage:  "IP address of fogcore implementation",
+			EnvVar: "HECOMMADDRESS",
+			Value:  "192.168.2.1:8001",
 		},
 	}
 	app.Run(os.Args)

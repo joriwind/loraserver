@@ -274,19 +274,19 @@ func publishDataUp(ctx common.Context, ns session.NodeSession, rxPacket models.R
 		publishDataUpReq.FPort = uint32(*macPL.FPort)
 
 		switch *macPL.FPort {
-		case 255: //SEND TO FOG --> redefine ctx since it is copy of real value
+		case 255: //hecomm SEND TO FOG --> redefine ctx since it is copy of real value
 
 			//Does the fog use secured connection?
 			var asDialOptions []grpc.DialOption
-			/*if c.String("as-tls-cert") != "" && c.String("as-tls-key") != "" {
+			if c.String("hecomm-cert") != "" && c.String("hecomm-key") != "" && c.String("hecomm-cacert") != "" {
 				asDialOptions = append(asDialOptions, grpc.WithTransportCredentials(
-					mustGetTransportCredentials(c.String("as-tls-cert"), c.String("as-tls-key"), c.String("as-ca-cert"), false),
+					mustGetTransportCredentials(c.String("hecomm-cert"), c.String("hecomm-key"), c.String("hecomm-cacert"), true),
 				))
-			} else {*/
-			asDialOptions = append(asDialOptions, grpc.WithInsecure())
-			//}
-
-			asConn, err := grpc.Dial("192.168.2.1:8001", asDialOptions...) //TODO: when close connection?
+			} else {
+				asDialOptions = append(asDialOptions, grpc.WithInsecure())
+			}
+			//"192.168.2.1:8001"
+			asConn, err := grpc.Dial(c.String("hecomm-address"), asDialOptions...) //TODO: when close connection?
 			if err != nil {
 				log.Fatalf("application-server (FOG) dial error: %s", err)
 			}
